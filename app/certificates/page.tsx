@@ -117,32 +117,18 @@ export default function CertificatesPage() {
     <div className="pt-20">
       <section className="hero-gradient py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-sm font-medium px-4 py-1.5 rounded-full mb-5"
-          >
+          <span className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-sm font-medium px-4 py-1.5 rounded-full mb-5">
             <span className="w-2 h-2 bg-green-400 rounded-full" />
             Certificates & Compliance
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-bold text-white mb-5"
-          >
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5">
             Certified,{" "}
             <span className="text-green-400">Authorized & Compliant</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-300 text-xl max-w-2xl mx-auto"
-          >
+          </h1>
+          <p className="text-gray-300 text-xl max-w-2xl mx-auto">
             Every certificate and authorization that backs our operations —
             because compliance isn't optional, it's our foundation.
-          </motion.p>
+          </p>
         </div>
       </section>
 

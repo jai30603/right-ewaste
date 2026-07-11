@@ -33,22 +33,12 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-sm font-medium px-4 py-2 rounded-full mb-6"
-            >
+            <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               India's Trusted E-Waste Recycler
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
-            >
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Recycle{" "}
               <span className="text-green-400">Responsibly.</span>
               <br />
@@ -58,26 +48,16 @@ export default function HeroSection() {
               <span className="text-gray-300">Build a Greener</span>
               <br />
               <span className="text-white">Future.</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl"
-            >
+            <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
               Right Ewaste Recycle Pvt. Ltd. is a government-certified e-waste
               management company providing responsible recycling, secure data
               destruction, and bulk pickup services for corporates, institutions,
               and government organizations across India.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-wrap gap-4 mb-12"
-            >
+            <div className="flex flex-wrap gap-4 mb-12">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-7 py-3.5 rounded-xl font-semibold text-base shadow-lg shadow-green-500/30 hover:shadow-green-400/40 transition-all"
@@ -91,15 +71,10 @@ export default function HeroSection() {
               >
                 Our Services
               </Link>
-            </motion.div>
+            </div>
 
             {/* Floating badges */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="flex flex-wrap gap-3"
-            >
+            <div className="flex flex-wrap gap-3">
               {floatingBadges.map((badge, i) => (
                 <div
                   key={badge.label}
@@ -111,7 +86,7 @@ export default function HeroSection() {
                   {badge.label}
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Right visual */}
