@@ -1,0 +1,450 @@
+# Sprint 2 – About Us Page Enhancement
+
+## Objective
+
+Design and develop a premium "About Us" page for the official website of **Right Ewaste Recycle Private Limited**.
+
+This page should not feel like a generic company profile. Instead, it should tell a compelling story about the company's purpose, mission, and commitment to responsible e-waste recycling.
+
+The overall design should match the premium look and feel of the existing website while maintaining consistency in typography, colors, spacing, animations, and responsiveness.
+
+**Important:** Do not redesign the website or change the existing project architecture. Only enhance the About page while preserving reusable components, routing, responsiveness, and the current design language.
+
+Use professional placeholder content and high-quality dummy images where actual company information is not yet available.
+
+---
+
+# Overall Design Style
+
+The About page should feel:
+
+* Professional
+* Premium
+* Modern
+* Trustworthy
+* Environmentally Responsible
+* Clean
+* Spacious
+* Corporate
+
+Use subtle Framer Motion animations throughout the page.
+
+Avoid clutter.
+
+Maintain generous whitespace.
+
+---
+
+# Hero Banner
+
+Create a dedicated hero section specifically for the About page.
+
+Background:
+
+Use a professional placeholder image showing an e-waste recycling facility, warehouse, engineers handling electronic waste, or sustainable technology.
+
+Apply a subtle dark overlay.
+
+Content:
+
+Small Label
+
+ABOUT RIGHT EWASTE
+
+Main Heading
+
+Building a Cleaner Future Through Responsible E-Waste Recycling
+
+Supporting Paragraph
+
+Use professional placeholder content explaining that Right Ewaste Recycle Private Limited is committed to providing environmentally responsible recycling solutions while helping businesses and individuals safely dispose of electronic waste.
+
+Include breadcrumb navigation.
+
+Home → About Us
+
+Animate all content on page load.
+
+---
+
+# Section 1 – Our Story
+
+This should be the heart of the page.
+
+Layout:
+
+Two-column layout.
+
+Left Side
+
+Professional placeholder image of a recycling warehouse or team.
+
+Right Side
+
+Heading
+
+Our Story
+
+Write a meaningful placeholder story instead of generic marketing text.
+
+Example style:
+
+"Every electronic device has a lifecycle. When that lifecycle ends, responsible disposal becomes just as important as responsible manufacturing. Right Ewaste Recycle Private Limited was established with a simple vision — to ensure that obsolete electronics never become an environmental burden.
+
+As technology continues to evolve, millions of electronic devices are discarded every year. Our purpose is to bridge the gap between technological progress and environmental responsibility by providing safe, compliant, and sustainable recycling solutions.
+
+Through responsible collection, recycling, and resource recovery, we aim to contribute towards a cleaner environment and a more circular economy."
+
+End the section with a premium button.
+
+Discover Our Journey →
+
+---
+
+# Section 2 – Mission & Vision
+
+Display two premium cards.
+
+Card One
+
+Mission
+
+Placeholder text:
+
+"Our mission is to provide secure, transparent, and environmentally responsible e-waste recycling solutions that help individuals and organizations dispose of electronic waste safely while protecting natural resources."
+
+Card Two
+
+Vision
+
+Placeholder text:
+
+"Our vision is to become one of India's most trusted e-waste recycling companies by promoting sustainable practices, innovation, and environmental awareness."
+
+Include premium icons.
+
+Use hover animations.
+
+---
+
+# Section 3 – Our Core Values
+
+Create a modern card layout.
+
+Five cards.
+
+Use premium icons.
+
+Card 1
+
+Sustainability
+
+"We believe every electronic device should be responsibly recycled."
+
+Card 2
+
+Integrity
+
+"We operate with transparency and ethical business practices."
+
+Card 3
+
+Innovation
+
+"We continuously improve our recycling processes through modern technologies."
+
+Card 4
+
+Customer Commitment
+
+"We strive to provide reliable, professional, and responsive service."
+
+Card 5
+
+Environmental Responsibility
+
+"We are committed to protecting our planet for future generations."
+
+Cards should animate while scrolling.
+
+Hover effects should feel premium.
+
+---
+
+# Section 4 – Why Choose Right Ewaste
+
+Create an attractive section.
+
+Use two-column layout.
+
+Left
+
+Professional placeholder image.
+
+Right
+
+Heading
+
+Why Choose Right Ewaste?
+
+Display premium feature cards.
+
+Examples:
+
+Government Compliant Recycling
+
+Responsible Processing
+
+Secure Data Handling
+
+Professional Team
+
+Transparent Documentation
+
+Customer-Focused Service
+
+Use icons.
+
+Include subtle animations.
+
+---
+
+# Section 5 – Company Highlights
+
+Display elegant animated statistic cards.
+
+Use placeholder values.
+
+Examples:
+
+10+
+
+Years of Experience
+
+500+
+
+Happy Customers
+
+250+
+
+Tons of E-Waste Recycled
+
+100%
+
+Responsible Disposal
+
+25+
+
+Corporate Partners
+
+These values should be easy to replace later.
+
+Animate counters when visible.
+
+---
+
+# Section 6 – Our Commitment
+
+Create a visually attractive section.
+
+Background should slightly differ from the rest of the page.
+
+Heading
+
+Our Commitment
+
+Placeholder content:
+
+"At Right Ewaste Recycle Private Limited, every electronic device we receive represents an opportunity to reduce environmental impact. We are committed to ensuring that electronic waste is handled responsibly, valuable resources are recovered efficiently, and hazardous materials are disposed of in accordance with environmental standards.
+
+Our commitment extends beyond recycling—we aim to build awareness, encourage sustainable practices, and contribute to a cleaner and greener future."
+
+Include a large environmental illustration or placeholder image.
+
+---
+
+# Section 7 – Why Responsible Recycling Matters
+
+Create an educational section.
+
+Heading
+
+Why Responsible E-Waste Recycling Matters
+
+Display four information cards.
+
+Examples:
+
+Growing Electronic Waste
+
+Recover Valuable Materials
+
+Protect Human Health
+
+Support Circular Economy
+
+Each card should include an icon and short explanation.
+
+This section should educate visitors while reinforcing the company's purpose.
+
+---
+
+# Section 8 – Our Journey Timeline
+
+Create a modern vertical timeline.
+
+Use placeholder milestones.
+
+2020
+
+Company Founded
+
+2021
+
+First Corporate Partnership
+
+2022
+
+Expanded Recycling Operations
+
+2023
+
+Introduced Secure Data Destruction
+
+2024
+
+Expanded Collection Network
+
+2025
+
+Growing Towards a Sustainable Future
+
+Use modern timeline animations.
+
+These milestones should be easy to edit later.
+
+---
+
+# Section 9 – Call to Action
+
+Create a premium full-width section.
+
+Heading
+
+Let's Build a Sustainable Future Together
+
+Description
+
+Whether you're an individual, business, educational institution, or government organization, Right Ewaste Recycle Private Limited is here to help you recycle electronic waste responsibly.
+
+Buttons
+
+Contact Us
+
+Explore Our Services
+
+Use attractive background with subtle gradients.
+
+---
+
+# Images
+
+For every image section:
+
+Use high-quality professional placeholder images.
+
+Examples:
+
+E-waste warehouse
+
+Electronics recycling
+
+Industrial recycling
+
+Team working
+
+Corporate meetings
+
+Sorting electronic waste
+
+Collection vehicles
+
+Use consistent image aspect ratios.
+
+Rounded corners.
+
+Subtle shadows.
+
+Hover zoom effects.
+
+All images should be easy to replace later.
+
+---
+
+# Animations
+
+Use Framer Motion.
+
+Include:
+
+Fade In
+
+Slide Up
+
+Image Zoom
+
+Hover Lift
+
+Scroll Reveal
+
+Animated Counters
+
+Timeline Reveal
+
+Button Hover
+
+Keep animations elegant and smooth.
+
+Avoid excessive motion.
+
+---
+
+# Accessibility
+
+Maintain semantic HTML, keyboard accessibility, visible focus states, proper heading hierarchy, descriptive image alt text, and accessible color contrast.
+
+---
+
+# Performance
+
+Optimize all placeholder images.
+
+Lazy load below-the-fold content.
+
+Keep animations performant.
+
+---
+
+# Code Quality
+
+Follow the existing project architecture.
+
+Create reusable components where appropriate.
+
+Keep styling modular.
+
+Use TypeScript best practices.
+
+Avoid duplicated code.
+
+---
+
+# Future Ready
+
+All placeholder content, statistics, images, and milestones should be stored in easily editable objects or configuration files so they can later be replaced with actual company information without modifying the layout.
+
+---
+
+# Final Goal
+
+The About Us page should make visitors feel that Right Ewaste Recycle Private Limited is a trustworthy, modern, environmentally responsible organization dedicated to solving the growing challenge of electronic waste. The page should balance storytelling, education, and professionalism while maintaining a premium corporate appearance consistent with the rest of the website.
