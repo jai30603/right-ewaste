@@ -1,0 +1,1 @@
+- [Next.js allowedDevOrigins wildcard](nextjs-allowed-dev-origins.md) — `allowedDevOrigins: ["*"]` doesn't match Replit's preview domain in Next.js dev mode; use explicit `*.replit.dev` patterns.

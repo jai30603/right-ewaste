@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "**" },
     ],
   },
-  allowedDevOrigins: ["*"],
+  allowedDevOrigins: ["*.replit.dev", "*.repl.co", "*.sisko.replit.dev", "localhost", "127.0.0.1"],
 };
 
 export default nextConfig;

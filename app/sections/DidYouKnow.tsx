@@ -68,7 +68,7 @@ export default function DidYouKnow() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {facts.map((fact, index) => (
             <motion.div
-              key={fact.label}
+              key={`${fact.label}-${index}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
