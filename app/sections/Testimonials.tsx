@@ -102,9 +102,9 @@ export default function Testimonials() {
 
         {/* Carousel */}
         <div className="max-w-3xl mx-auto">
-          <div className="relative bg-gradient-to-br from-gray-50 to-green-50 border border-gray-100 rounded-3xl p-8 sm:p-12 shadow-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br from-gray-50 to-green-50 border border-gray-100 rounded-3xl p-6 sm:p-12 shadow-sm overflow-hidden">
             {/* Quote mark */}
-            <div className="absolute top-6 right-8 text-green-200 text-8xl font-serif leading-none select-none">"</div>
+            <div className="absolute top-4 right-5 sm:top-6 sm:right-8 text-green-200 text-5xl sm:text-8xl font-serif leading-none select-none">"</div>
 
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
@@ -123,7 +123,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Review text */}
-                <blockquote className="text-gray-700 text-lg leading-relaxed mb-8 relative z-10">
+                <blockquote className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 relative z-10">
                   "{t.review}"
                 </blockquote>
 

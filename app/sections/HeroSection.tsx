@@ -12,7 +12,7 @@ const trustBadges = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center hero-gradient overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center hero-gradient overflow-hidden">
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-green-500/10 rounded-full blur-3xl" />
@@ -29,53 +29,68 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-24">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 sm:pt-24 sm:pb-24">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
 
           {/* Left — content */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-xs sm:text-sm font-medium px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full mb-5 sm:mb-6">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse shrink-0" />
               India's Trusted Certified E-Waste Recycler
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.15] sm:leading-tight mb-5 sm:mb-6">
               Responsible E-Waste{" "}
               <span className="text-green-400">Recycling</span> for a{" "}
               <span className="text-green-400">Sustainable</span> Future
             </h1>
 
-            <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-7 sm:mb-8 max-w-xl">
               Helping businesses, industries, and individuals safely recycle electronic waste while protecting the environment through compliant and responsible recycling practices.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-10">
+            <div className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-7 py-3.5 rounded-xl font-semibold text-base shadow-lg shadow-green-500/30 hover:shadow-green-400/40 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl font-semibold text-sm sm:text-base shadow-lg shadow-green-500/30 hover:shadow-green-400/40 transition-all hover:-translate-y-0.5 w-full sm:w-auto justify-center"
               >
                 Contact Us
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-xl font-semibold text-base backdrop-blur-sm transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl font-semibold text-sm sm:text-base backdrop-blur-sm transition-all hover:-translate-y-0.5 w-full sm:w-auto justify-center"
               >
                 Our Services
               </Link>
             </div>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {trustBadges.map((badge) => (
                 <div
                   key={badge.label}
-                  className="flex items-center gap-2 bg-white/10 border border-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm text-white font-medium"
+                  className="flex items-center gap-2 bg-white/10 border border-white/10 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm text-white font-medium"
                 >
-                  <div className={`w-5 h-5 ${badge.color} rounded-full flex items-center justify-center`}>
+                  <div className={`w-5 h-5 ${badge.color} rounded-full flex items-center justify-center shrink-0`}>
                     <badge.icon className="w-3 h-3 text-white" />
                   </div>
                   {badge.label}
+                </div>
+              ))}
+            </div>
+
+            {/* Compact stats strip — mobile & tablet only, replaces the desktop card below lg */}
+            <div className="grid grid-cols-2 gap-3 mt-8 lg:hidden">
+              {[
+                { label: "E-Waste Collected", value: "500+ Tons" },
+                { label: "Corporate Clients", value: "500+" },
+                { label: "Cities Covered", value: "25+" },
+                { label: "Years of Trust", value: "10+" },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-white/10 border border-white/10 backdrop-blur-sm rounded-2xl p-4">
+                  <div className="text-xl font-bold text-white">{stat.value}</div>
+                  <div className="text-gray-300 text-xs mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
