@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Recycle, Phone, Mail, MapPin, Clock, Calendar } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Calendar } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -38,12 +39,14 @@ export default function Footer() {
           {/* Col 1 — Brand (spans 2 on lg) */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-5 group">
-              <div className="w-11 h-11 bg-green-600 group-hover:bg-green-500 rounded-xl flex items-center justify-center shadow-lg transition-colors">
-                <Recycle className="w-6 h-6 text-white" />
-              </div>
+              <Logo className="w-11 h-11" />
               <div>
-                <div className="font-bold text-white text-base leading-tight">Right Ewaste Recycle</div>
-                <div className="text-green-400 text-xs leading-tight">Private Limited</div>
+                <div className="font-extrabold uppercase tracking-wide text-white text-sm leading-tight">
+                  Right Ewaste Recycle
+                </div>
+                <div className="font-extrabold uppercase tracking-wide text-green-400 text-[11px] leading-tight">
+                  Private Limited
+                </div>
               </div>
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed mb-5 max-w-sm">

@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Recycle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "@/components/ThemeToggle";
+import Logo from "@/components/Logo";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -52,28 +53,22 @@ export default function Navbar() {
           }`}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group shrink-0">
-            <div
-              className={`bg-green-600 rounded-xl flex items-center justify-center shadow-md group-hover:bg-green-700 transition-all duration-300 ${
-                scrolled ? "w-8 h-8" : "w-10 h-10"
-              }`}
-            >
-              <Recycle className={`text-white transition-all duration-300 ${scrolled ? "w-4 h-4" : "w-6 h-6"}`} />
-            </div>
+          <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+            <Logo className={`transition-all duration-300 ${scrolled ? "w-8 h-8" : "w-10 h-10"}`} />
             <div className="hidden sm:block">
               <div
-                className={`font-bold leading-tight transition-all duration-300 ${
-                  scrolled ? "text-sm" : "text-base"
-                } ${isTransparent ? "text-white" : "text-gray-900"}`}
+                className={`font-extrabold uppercase tracking-wide leading-tight transition-all duration-300 ${
+                  scrolled ? "text-[11px]" : "text-xs"
+                } ${isTransparent ? "text-white" : "text-[#04543c]"}`}
               >
-                Right Ewaste
+                Right Ewaste Recycle
               </div>
               <div
-                className={`leading-tight transition-all duration-300 ${
-                  scrolled ? "text-[10px]" : "text-xs"
-                } ${isTransparent ? "text-green-300" : "text-green-600"}`}
+                className={`font-extrabold uppercase tracking-wide leading-tight transition-all duration-300 ${
+                  scrolled ? "text-[11px]" : "text-xs"
+                } ${isTransparent ? "text-green-300" : "text-[#04543c]"}`}
               >
-                Recycle Pvt. Ltd.
+                Private Limited
               </div>
             </div>
           </Link>
