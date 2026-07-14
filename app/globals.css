@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #ffffff;
@@ -103,3 +104,48 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* ────────────────────────────────────────────────────────────────
+   Dark mode site-wide retrofit.
+   The site is built with many literal Tailwind utility classes
+   (bg-white, text-gray-900, etc.) spread across ~30 page files.
+   Rather than touching every file, we repaint those exact utility
+   classes when the <html> element carries the `dark` class, toggled
+   by ThemeToggle.tsx and initialized pre-hydration in layout.tsx.
+   ──────────────────────────────────────────────────────────────── */
+.dark { color-scheme: dark; }
+
+.dark .bg-white { background-color: #111827 !important; }
+.dark .bg-gray-50 { background-color: #1a2233 !important; }
+.dark .bg-gray-100 { background-color: #1f2937 !important; }
+.dark .subtle-green-bg { background: linear-gradient(180deg, #0f1f17 0%, #0a1a12 100%) !important; }
+
+.dark .text-gray-900 { color: #f3f4f6 !important; }
+.dark .text-gray-800 { color: #e5e7eb !important; }
+.dark .text-gray-700 { color: #d1d5db !important; }
+.dark .text-gray-600 { color: #9ca3af !important; }
+.dark .text-gray-500 { color: #9ca3af !important; }
+.dark .text-gray-400 { color: #6b7280 !important; }
+
+.dark .border-gray-100 { border-color: #262f3f !important; }
+.dark .border-gray-200 { border-color: #2d3748 !important; }
+.dark .border-gray-300 { border-color: #374151 !important; }
+
+.dark .bg-green-50 { background-color: rgba(34, 197, 94, 0.08) !important; }
+.dark .bg-blue-50 { background-color: rgba(37, 99, 235, 0.1) !important; }
+.dark .bg-red-50 { background-color: rgba(239, 68, 68, 0.1) !important; }
+.dark .bg-orange-50 { background-color: rgba(249, 115, 22, 0.1) !important; }
+.dark .bg-purple-50 { background-color: rgba(147, 51, 234, 0.1) !important; }
+.dark .bg-emerald-50 { background-color: rgba(16, 185, 129, 0.1) !important; }
+.dark .bg-teal-50 { background-color: rgba(20, 184, 166, 0.1) !important; }
+.dark .bg-yellow-50 { background-color: rgba(234, 179, 8, 0.1) !important; }
+
+.dark .shadow-sm,
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl,
+.dark .shadow-2xl {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+.dark ::-webkit-scrollbar-track { background: #111827; }
