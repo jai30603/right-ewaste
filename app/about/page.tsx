@@ -14,158 +14,112 @@ import {
   Leaf,
   ShieldCheck,
   Lightbulb,
-  HandshakeIcon,
-  ChevronRight,
   CheckCircle2,
   TrendingUp,
   Cpu,
   Globe,
   AlertTriangle,
+  ChevronRight,
+  Phone,
+  Truck,
+  Package,
+  Settings,
+  Layers,
+  BadgeCheck,
+  Wrench,
+  Zap,
+  BarChart3,
+  FileText,
+  Star,
 } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import CTASection from "@/sections/CTASection";
-import type { Metadata } from "next";
 
-// ─── Data (easy to edit later) ───────────────────────────────────────────────
+// ─── Config (edit here to update content) ────────────────────────────────────
 
-const timeline = [
-  {
-    year: "2020",
-    title: "Company Founded",
-    desc: "Right Ewaste Recycle Pvt. Ltd. was established with a clear vision — to provide India with a certified, responsible e-waste recycling solution.",
-    icon: "🌱",
-  },
-  {
-    year: "2021",
-    title: "First Corporate Partnership",
-    desc: "Signed our first major corporate partnership, beginning bulk e-waste collection and IT asset disposal for enterprises.",
-    icon: "🤝",
-  },
-  {
-    year: "2022",
-    title: "Expanded Recycling Operations",
-    desc: "Expanded our processing facility and launched our secure data destruction service to meet growing enterprise demand.",
-    icon: "🏭",
-  },
-  {
-    year: "2023",
-    title: "Introduced Secure Data Destruction",
-    desc: "Launched DoD-standard data erasure and physical media destruction with full audit trail certificates for compliance.",
-    icon: "🔒",
-  },
-  {
-    year: "2024",
-    title: "Expanded Collection Network",
-    desc: "Extended our doorstep pickup network to 25+ cities and crossed 250 tons of e-waste responsibly recycled.",
-    icon: "🚚",
-  },
-  {
-    year: "2025",
-    title: "Growing Towards a Sustainable Future",
-    desc: "Scaling operations nationwide with a 100% zero-landfill commitment, new corporate partnerships, and renewed government authorizations.",
-    icon: "🌍",
-  },
-];
+const story = {
+  heading: "Our Story",
+  subheading: "Born from a Vision of a Cleaner, Greener India",
+  paragraphs: [
+    "Every electronic device has a lifecycle. When that lifecycle ends, responsible disposal becomes just as important as responsible manufacturing. Right Ewaste Recycle Private Limited was established with a simple vision — to ensure that obsolete electronics never become an environmental burden.",
+    "As technology continues to evolve at an unprecedented pace, millions of electronic devices are discarded every year across India. Improper disposal of these devices leaches toxic materials like lead, mercury, and cadmium into our soil, water, and air — harming communities and ecosystems for decades.",
+    "Through responsible collection, certified recycling, and resource recovery, we aim to bridge the gap between technological progress and environmental responsibility — contributing to a cleaner India and a more circular economy.",
+  ],
+  cta: "Discover Our Journey",
+};
 
-const highlights = [
-  { value: 10, suffix: "+", unit: "Years", label: "Years of Experience", color: "bg-green-600", light: "bg-green-50", text: "text-green-600" },
-  { value: 500, suffix: "+", unit: "", label: "Happy Customers", color: "bg-blue-600", light: "bg-blue-50", text: "text-blue-600" },
-  { value: 250, suffix: "+", unit: "Tons", label: "E-Waste Recycled", color: "bg-emerald-600", light: "bg-emerald-50", text: "text-emerald-600" },
-  { value: 100, suffix: "%", unit: "", label: "Responsible Disposal", color: "bg-teal-600", light: "bg-teal-50", text: "text-teal-600" },
-  { value: 25, suffix: "+", unit: "", label: "Corporate Partners", color: "bg-purple-600", light: "bg-purple-50", text: "text-purple-600" },
+const missionVision = [
+  {
+    icon: Target,
+    label: "Our Mission",
+    color: "from-green-600 to-emerald-700",
+    text: "Our mission is to provide secure, transparent and environmentally responsible e-waste recycling solutions for individuals, businesses and institutions across India — ensuring every device is handled safely, every data asset is destroyed securely, and every material is recovered responsibly.",
+  },
+  {
+    icon: Eye,
+    label: "Our Vision",
+    color: "from-blue-600 to-blue-800",
+    text: "Our vision is to become one of India's most trusted and sustainable e-waste recycling organizations — building a future where every electronic device is responsibly recycled, natural resources are conserved, and the environment is protected for generations to come.",
+  },
 ];
 
 const values = [
-  {
-    icon: Leaf,
-    title: "Sustainability",
-    description: "We believe every electronic device should be responsibly recycled — not discarded. Sustainability is at the heart of all our operations.",
-    color: "text-green-600",
-    bg: "bg-green-600",
-    light: "bg-green-50",
-    border: "hover:border-green-200",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Integrity",
-    description: "We operate with full transparency and ethical business practices. Every process is documented, certified, and accountable.",
-    color: "text-blue-600",
-    bg: "bg-blue-600",
-    light: "bg-blue-50",
-    border: "hover:border-blue-200",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation",
-    description: "We continuously improve our recycling processes through modern technologies to maximise material recovery and minimise waste.",
-    color: "text-yellow-600",
-    bg: "bg-yellow-500",
-    light: "bg-yellow-50",
-    border: "hover:border-yellow-200",
-  },
-  {
-    icon: HandshakeIcon,
-    title: "Customer Commitment",
-    description: "We strive to provide reliable, professional, and responsive service to every client — from individuals to large enterprises.",
-    color: "text-purple-600",
-    bg: "bg-purple-600",
-    light: "bg-purple-50",
-    border: "hover:border-purple-200",
-  },
-  {
-    icon: Globe,
-    title: "Environmental Responsibility",
-    description: "We are committed to protecting our planet for future generations through zero-landfill recycling and responsible material recovery.",
-    color: "text-teal-600",
-    bg: "bg-teal-600",
-    light: "bg-teal-50",
-    border: "hover:border-teal-200",
-  },
+  { icon: Leaf, label: "Sustainability", desc: "We believe every electronic device deserves a responsible end-of-life — not a landfill.", color: "bg-green-600", border: "hover:border-green-200" },
+  { icon: ShieldCheck, label: "Integrity", desc: "We operate with full transparency, ethical practices, and accountability at every step.", color: "bg-blue-600", border: "hover:border-blue-200" },
+  { icon: Lightbulb, label: "Innovation", desc: "We continuously improve our recycling processes through modern technologies and methods.", color: "bg-yellow-500", border: "hover:border-yellow-200" },
+  { icon: BadgeCheck, label: "Compliance", desc: "We adhere strictly to all government regulations, PCB authorizations, and environmental standards.", color: "bg-purple-600", border: "hover:border-purple-200" },
+  { icon: Heart, label: "Customer Commitment", desc: "We deliver reliable, professional, and responsive service to every client we serve.", color: "bg-red-500", border: "hover:border-red-200" },
 ];
 
-const whyChooseFeatures = [
-  { icon: ShieldCheck, label: "Government Compliant Recycling", desc: "Fully authorized by Central & State Pollution Control Boards." },
-  { icon: Recycle, label: "Responsible Processing", desc: "Zero-landfill policy with maximum material recovery." },
+const whyChoose = [
+  { icon: ShieldCheck, label: "Government Compliant", desc: "CPCB & State PCB authorized recycler with all required certifications." },
+  { icon: Recycle, label: "Responsible Recycling", desc: "Zero landfill policy with maximum material recovery at every stage." },
   { icon: Cpu, label: "Secure Data Handling", desc: "DoD-standard erasure and physical destruction with certificates." },
-  { icon: Users, label: "Professional Team", desc: "Trained personnel with expertise in e-waste management." },
-  { icon: Award, label: "Transparent Documentation", desc: "Full audit trail — weight slips, collection receipts, and certificates." },
-  { icon: Heart, label: "Customer-Focused Service", desc: "Responsive team, free bulk pickup, and same-day enquiry response." },
+  { icon: FileText, label: "Transparent Documentation", desc: "Complete audit trail — weight slips, receipts, and recycling certificates." },
+  { icon: Truck, label: "Professional Pickup", desc: "Free bulk doorstep pickup across 25+ cities with trained personnel." },
+  { icon: Globe, label: "Environment First", desc: "Every decision we make is guided by its impact on the environment." },
 ];
 
-const whyMattersCards = [
-  {
-    icon: TrendingUp,
-    title: "Growing Electronic Waste",
-    description: "India generates over 3.2 million tonnes of e-waste annually — the 3rd largest globally. Certified recycling is the only responsible solution.",
-    color: "bg-blue-600",
-    light: "bg-blue-50",
-    text: "text-blue-700",
-  },
-  {
-    icon: Recycle,
-    title: "Recover Valuable Materials",
-    description: "Electronics contain gold, silver, copper, and rare earth metals. Responsible recycling recovers these resources instead of mining new ones.",
-    color: "bg-green-600",
-    light: "bg-green-50",
-    text: "text-green-700",
-  },
-  {
-    icon: AlertTriangle,
-    title: "Protect Human Health",
-    description: "Improperly disposed e-waste releases lead, mercury, and cadmium into soil and water — posing severe health risks to communities.",
-    color: "bg-orange-500",
-    light: "bg-orange-50",
-    text: "text-orange-700",
-  },
-  {
-    icon: Globe,
-    title: "Support Circular Economy",
-    description: "Every recycled device keeps materials in use longer, reduces demand for raw material extraction, and cuts industrial carbon emissions.",
-    color: "bg-teal-600",
-    light: "bg-teal-50",
-    text: "text-teal-700",
-  },
+const techFeatures = [
+  { icon: Wrench, label: "Safe Dismantling", desc: "Component-level disassembly by trained technicians using specialized tools in safe conditions." },
+  { icon: Layers, label: "Material Recovery", desc: "Advanced separation of metals, plastics, glass, and rare earth materials for maximum recovery." },
+  { icon: Zap, label: "Resource Optimisation", desc: "Recovered materials are channelled back into manufacturing supply chains efficiently." },
+  { icon: BarChart3, label: "Environmental Compliance", desc: "All processes monitored and documented to meet Central and State environmental norms." },
+];
+
+const processSteps = [
+  { icon: Phone, step: "01", label: "Collection", desc: "Doorstep pickup or drop-off" },
+  { icon: Truck, step: "02", label: "Transportation", desc: "Secure transit to facility" },
+  { icon: Package, step: "03", label: "Sorting", desc: "Category-wise classification" },
+  { icon: Wrench, step: "04", label: "Dismantling", desc: "Safe component separation" },
+  { icon: Layers, step: "05", label: "Material Recovery", desc: "Metals, plastics, rare earths" },
+  { icon: Recycle, step: "06", label: "Recycling", desc: "Eco-compliant processing" },
+  { icon: Award, step: "07", label: "Certification", desc: "Official recycling certificate" },
+];
+
+const impactStats = [
+  { value: 250, suffix: "+", unit: "Tons", label: "Tons Recycled", icon: Recycle, color: "bg-green-600", light: "bg-green-50", text: "text-green-700" },
+  { value: 500, suffix: "+", unit: "", label: "Happy Customers", icon: Users, color: "bg-blue-600", light: "bg-blue-50", text: "text-blue-700" },
+  { value: 50000, suffix: "+", unit: "", label: "Devices Processed", icon: Cpu, color: "bg-purple-600", light: "bg-purple-50", text: "text-purple-700" },
+  { value: 95, suffix: "%", unit: "", label: "Material Recovery", icon: TrendingUp, color: "bg-orange-500", light: "bg-orange-50", text: "text-orange-700" },
+  { value: 100, suffix: "%", unit: "", label: "Responsible Disposal", icon: ShieldCheck, color: "bg-teal-600", light: "bg-teal-50", text: "text-teal-700" },
+];
+
+const facilities = [
+  { label: "Main Recycling Warehouse", category: "Warehouse", gradient: "from-green-700 to-emerald-900", size: "lg" },
+  { label: "Collection Center", category: "Collection", gradient: "from-blue-700 to-blue-900", size: "sm" },
+  { label: "Sorting & Segregation Area", category: "Sorting", gradient: "from-teal-700 to-teal-900", size: "sm" },
+  { label: "Recycling Equipment Floor", category: "Equipment", gradient: "from-gray-700 to-gray-900", size: "md" },
+  { label: "Corporate Office", category: "Office", gradient: "from-purple-700 to-purple-900", size: "md" },
+  { label: "Collection Vehicles Fleet", category: "Transport", gradient: "from-orange-700 to-orange-900", size: "sm" },
+];
+
+const certifications = [
+  { icon: BadgeCheck, label: "GST Registration", number: "27XXXXX1234Z1Z5", color: "bg-blue-600", light: "bg-blue-50", border: "border-blue-100" },
+  { icon: FileText, label: "Company Registration", number: "CIN: U90000MHXXXXPTC", color: "bg-green-600", light: "bg-green-50", border: "border-green-100" },
+  { icon: ShieldCheck, label: "Pollution Control Board", number: "PCB Auth. No.: XXXXXX", color: "bg-emerald-600", light: "bg-emerald-50", border: "border-emerald-100" },
+  { icon: Star, label: "ISO Certification", number: "ISO 14001:2015", color: "bg-purple-600", light: "bg-purple-50", border: "border-purple-100" },
+  { icon: Award, label: "Government Compliance", number: "E-Waste Reg. No.: XXXXX", color: "bg-orange-500", light: "bg-orange-50", border: "border-orange-100" },
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -175,42 +129,38 @@ export default function AboutPage() {
     <div className="pt-20">
 
       {/* ── 1. Hero ── */}
-      <section className="relative hero-gradient overflow-hidden py-24 lg:py-32">
-        {/* Background decoration */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-green-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+      <section className="relative hero-gradient overflow-hidden py-24 lg:py-36">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-green-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
           <div className="absolute inset-0 opacity-5"
-            style={{
-              backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-              backgroundSize: "60px 60px",
-            }} />
+            style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.12) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
+          <nav className="flex items-center gap-2 text-sm text-gray-400 mb-10" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-green-400 transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5" />
             <span className="text-green-400 font-medium">About Us</span>
           </nav>
 
           <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-              About Right Ewaste
+            <span className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-xs font-semibold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
+              <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+              About Us
             </span>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Building a Cleaner Future Through{" "}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-7">
+              Building a Cleaner Tomorrow Through{" "}
               <span className="text-green-400">Responsible E-Waste Recycling</span>
             </h1>
 
-            <p className="text-gray-300 text-lg leading-relaxed max-w-2xl">
-              Right Ewaste Recycle Private Limited is committed to providing environmentally responsible recycling solutions — helping businesses, institutions, and individuals safely dispose of electronic waste while protecting natural resources and complying with all regulatory requirements.
+            <p className="text-gray-300 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
+              Right Ewaste Recycle Private Limited is a responsible electronic waste recycling company dedicated to sustainability, innovation, and environmental compliance — helping businesses and individuals safely dispose of electronics while protecting our planet.
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-wrap gap-4">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg shadow-green-500/30 transition-all hover:-translate-y-0.5">
                 Get in Touch <ArrowRight className="w-4 h-4" />
               </Link>
@@ -221,102 +171,77 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Wave */}
         <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="block">
-            <path d="M0 60H1440V30C1440 30 1200 0 720 0C240 0 0 30 0 30V60Z" fill="white" />
+          <svg viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg" className="block">
+            <path d="M0 70H1440V35C1440 35 1200 0 720 0C240 0 0 35 0 35V70Z" fill="white" />
           </svg>
         </div>
       </section>
 
       {/* ── 2. Our Story ── */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-16 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-            {/* Image placeholder */}
+            {/* Image */}
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="relative"
+              transition={{ duration: 0.8 }}
+              className="relative order-2 lg:order-1"
             >
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-green-800 to-emerald-950 aspect-[4/3] shadow-2xl group">
-                <div className="absolute inset-0 opacity-10"
-                  style={{
-                    backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-                    backgroundSize: "40px 40px",
-                  }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white/20">
-                    <Recycle className="w-32 h-32 mx-auto mb-4" />
-                    <p className="text-sm">E-Waste Recycling Warehouse</p>
+                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.1) 1px,transparent 1px)", backgroundSize: "40px 40px" }} />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white/15">
+                  <Recycle className="w-36 h-36 mb-3" />
+                  <p className="text-sm tracking-wider">E-Waste Recycling Facility</p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4">
+                    <p className="text-white font-semibold text-sm">📍 State-of-the-Art Processing Facility</p>
+                    <p className="text-green-300 text-xs mt-0.5">Zero Landfill • Fully Certified • Pan-India</p>
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5">
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-                    <p className="text-white text-sm font-medium">📍 State-of-the-art processing facility</p>
-                    <p className="text-green-300 text-xs mt-1">Operating since 2020 • Zero Landfill Policy</p>
-                  </div>
-                </div>
-                {/* Hover zoom overlay */}
-                <div className="absolute inset-0 bg-green-900/0 group-hover:bg-green-900/10 transition-all duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 scale-100 group-hover:scale-105 transition-transform duration-700 opacity-0" />
               </div>
-
-              {/* Floating badges */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-5 -right-5 bg-white shadow-xl rounded-2xl p-4 border border-gray-100"
-              >
-                <div className="text-2xl font-bold text-green-600">10+</div>
+              <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-5 -right-5 bg-white shadow-2xl rounded-2xl p-4 border border-gray-100 z-10">
+                <div className="text-3xl font-bold text-green-600">10+</div>
                 <div className="text-xs text-gray-500 font-medium">Years in Service</div>
               </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-5 -left-5 bg-white shadow-xl rounded-2xl p-4 border border-gray-100"
-              >
-                <div className="text-2xl font-bold text-blue-600">500+</div>
+              <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-5 -left-5 bg-white shadow-2xl rounded-2xl p-4 border border-gray-100 z-10">
+                <div className="text-3xl font-bold text-blue-600">500+</div>
                 <div className="text-xs text-gray-500 font-medium">Happy Customers</div>
               </motion.div>
             </motion.div>
 
             {/* Text */}
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.8 }}
+              className="order-1 lg:order-2"
             >
               <span className="inline-flex items-center gap-1.5 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-5">
                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-                Our Story
+                {story.heading}
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-6">
-                Born from a Vision of a{" "}
+                {story.subheading.split("Cleaner, Greener India")[0]}
                 <span className="text-green-600">Cleaner, Greener India</span>
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  Every electronic device has a lifecycle. When that lifecycle ends, responsible disposal becomes just as important as responsible manufacturing. Right Ewaste Recycle Private Limited was established with a simple vision — to ensure that obsolete electronics never become an environmental burden.
-                </p>
-                <p>
-                  As technology continues to evolve, millions of electronic devices are discarded every year. Our purpose is to bridge the gap between technological progress and environmental responsibility by providing safe, compliant, and sustainable recycling solutions.
-                </p>
-                <p>
-                  Through responsible collection, certified recycling, and resource recovery, we aim to contribute towards a cleaner environment and a more circular economy — one device at a time.
-                </p>
+                {story.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
               </div>
-
               <div className="grid grid-cols-2 gap-3 my-7">
                 {[
-                  { icon: ShieldCheck, label: "PCB Authorized Recycler" },
+                  { icon: ShieldCheck, label: "PCB Authorized" },
                   { icon: Leaf, label: "Zero Landfill Policy" },
-                  { icon: Award, label: "Certified Data Destruction" },
+                  { icon: Award, label: "Data Destruction Cert." },
                   { icon: Building2, label: "Pan-India Operations" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-2">
@@ -327,111 +252,154 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-
-              <Link
-                href="/process"
-                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-7 py-3.5 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
-              >
-                Discover Our Journey <ArrowRight className="w-4 h-4" />
+              <Link href="/process"
+                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-7 py-3.5 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                {story.cta} <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ── 3. Mission & Vision ── */}
+      {/* ── 3. Our Purpose ── */}
       <section className="py-16 lg:py-24 subtle-green-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Mission & Vision"
-            title="Our Purpose &"
-            titleHighlight="Direction"
-            description="Two guiding principles that shape every decision we make and every service we deliver."
-          />
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <span className="inline-flex items-center gap-1.5 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-5">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                Why We Exist
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-6">
+                Electronic Waste is a{" "}
+                <span className="text-green-600">Growing Crisis</span>
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-5 text-lg">
+                Electronic devices contain precious recoverable materials — gold, silver, copper, palladium, and rare earth elements — that are simply lost when devices are thrown into landfills. At the same time, improper disposal releases toxic substances into our environment.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Right Ewaste Recycle exists to solve this problem. We ensure that every device we collect has its valuable materials responsibly recovered and its hazardous components safely managed — turning what was a waste problem into a resource opportunity.
+              </p>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {[
+                  { stat: "3.2M+", label: "Tonnes of e-waste generated in India annually", color: "text-red-500" },
+                  { stat: "Only 17%", label: "Of global e-waste formally recycled each year", color: "text-orange-500" },
+                  { stat: "70%", label: "Of toxic landfill waste comes from electronics", color: "text-purple-600" },
+                ].map((item) => (
+                  <div key={item.label} className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm text-center">
+                    <div className={`text-2xl font-bold ${item.color} mb-1`}>{item.stat}</div>
+                    <p className="text-gray-500 text-xs leading-relaxed">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Target,
-                title: "Our Mission",
-                borderColor: "border-green-500",
-                iconBg: "bg-green-600",
-                gradientLight: "from-green-50",
-                text: "Our mission is to provide secure, transparent, and environmentally responsible e-waste recycling solutions that help individuals and organizations dispose of electronic waste safely while protecting natural resources and meeting all regulatory requirements.",
-              },
-              {
-                icon: Eye,
-                title: "Our Vision",
-                borderColor: "border-blue-500",
-                iconBg: "bg-blue-600",
-                gradientLight: "from-blue-50",
-                text: "Our vision is to become one of India's most trusted e-waste recycling companies by promoting sustainable practices, innovation, and environmental awareness — ensuring no electronic device ends up harming our planet.",
-              },
-              {
-                icon: Heart,
-                title: "Our Purpose",
-                borderColor: "border-red-400",
-                iconBg: "bg-red-500",
-                gradientLight: "from-red-50",
-                text: "To bridge the gap between technology consumption and environmental responsibility — creating a circular economy where electronic waste becomes a valuable resource, not a pollutant damaging communities and ecosystems.",
-              },
-            ].map((item, i) => (
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+            >
+              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-teal-800 to-teal-950 aspect-[4/3] shadow-2xl group">
+                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 0%, transparent 60%)" }} />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white/15">
+                  <Globe className="w-32 h-32 mb-3" />
+                  <p className="text-sm tracking-wider">Environmental Impact Visualization</p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4">
+                    <p className="text-green-300 text-xs font-semibold uppercase tracking-wider mb-1">Our Contribution</p>
+                    <p className="text-white text-sm font-medium">Recovering valuable materials and reducing India's e-waste landfill burden, one device at a time.</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. Mission & Vision (glass cards) ── */}
+      <section className="py-16 lg:py-24 hero-gradient relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-20 right-1/4 w-72 h-72 bg-green-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-xs font-semibold px-4 py-2 rounded-full mb-5 uppercase tracking-widest">
+              <span className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+              Mission & Vision
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+              Our Purpose &{" "}
+              <span className="text-green-400">Direction</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {missionVision.map((item, i) => (
               <motion.div
-                key={item.title}
+                key={item.label}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                className={`bg-white rounded-2xl p-8 shadow-sm border-t-4 ${item.borderColor} hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                className="bg-white/10 border border-white/20 backdrop-blur-sm rounded-3xl p-8 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 group"
               >
-                <div className={`w-12 h-12 ${item.iconBg} rounded-xl flex items-center justify-center mb-5 shadow-md`}>
-                  <item.icon className="w-6 h-6 text-white" />
+                <div className={`w-14 h-14 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+                  <item.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">{item.text}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{item.label}</h3>
+                <p className="text-gray-300 leading-relaxed">{item.text}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 4. Core Values ── */}
+      {/* ── 5. Core Values ── */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badge="Core Values"
             title="The Principles That"
-            titleHighlight="Guide Us"
-            description="Our values define who we are, how we deliver every service, and why clients trust us."
+            titleHighlight="Guide Everything We Do"
+            description="Our values are not just words on a wall — they shape how we operate, how we treat clients, and how we care for the environment."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {values.map((v, i) => (
               <motion.div
-                key={v.title}
+                key={v.label}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`bg-white rounded-2xl p-6 shadow-sm border border-gray-100 ${v.border} hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 group`}
+                className={`bg-white rounded-2xl p-6 shadow-sm border border-gray-100 ${v.border} hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group`}
               >
-                <div className={`w-12 h-12 ${v.bg} rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform`}>
+                <div className={`w-12 h-12 ${v.color} rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform`}>
                   <v.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className={`font-bold text-gray-900 mb-2 group-hover:${v.color} transition-colors`}>{v.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{v.description}</p>
+                <h3 className="font-bold text-gray-900 mb-2 text-base">{v.label}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 5. Why Choose Right Ewaste ── */}
+      {/* ── 6. Why Choose Right Ewaste ── */}
       <section className="py-16 lg:py-24 subtle-green-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-            {/* Text side */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -443,15 +411,13 @@ export default function AboutPage() {
                 Why Choose Us
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-6">
-                Why Choose{" "}
-                <span className="text-green-600">Right Ewaste?</span>
+                Why Choose <span className="text-green-600">Right Ewaste?</span>
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                We combine regulatory compliance, security, and genuine environmental care to deliver e-waste recycling that businesses and individuals can trust completely.
+                We combine regulatory compliance, security, and genuine environmental care to deliver e-waste recycling that organizations and individuals can fully trust.
               </p>
-
               <div className="grid sm:grid-cols-2 gap-4">
-                {whyChooseFeatures.map((f, i) => (
+                {whyChoose.map((f, i) => (
                   <motion.div
                     key={f.label}
                     initial={{ opacity: 0, y: 15 }}
@@ -472,7 +438,6 @@ export default function AboutPage() {
               </div>
             </motion.div>
 
-            {/* Image placeholder */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -480,31 +445,22 @@ export default function AboutPage() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-800 to-blue-950 aspect-square shadow-2xl group">
-                <div className="absolute inset-0 opacity-10"
-                  style={{
-                    backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-                    backgroundSize: "40px 40px",
-                  }} />
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white/20">
-                  <ShieldCheck className="w-28 h-28 mb-3" />
-                  <p className="text-sm">Professional Team at Work</p>
+              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-800 to-indigo-950 aspect-square shadow-2xl group">
+                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.1) 1px,transparent 1px)", backgroundSize: "40px 40px" }} />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white/15">
+                  <ShieldCheck className="w-32 h-32 mb-3" />
+                  <p className="text-sm tracking-wider">Professional Team at Work</p>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5">
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-                    <p className="text-white text-sm font-semibold">✓ Certified & Government Authorized</p>
-                    <p className="text-blue-300 text-xs mt-1">CPCB & State PCB Authorized Recycler</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4">
+                    <p className="text-white font-semibold text-sm">✓ CPCB & State PCB Authorized Recycler</p>
+                    <p className="text-blue-300 text-xs mt-0.5">All authorizations renewed and compliant</p>
                   </div>
                 </div>
               </div>
-
-              {/* Decorative card */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-5 -left-5 bg-white shadow-xl rounded-2xl p-4 border border-gray-100"
-              >
+              <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-5 -left-5 bg-white shadow-2xl rounded-2xl p-4 border border-gray-100 z-10">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
                     <CheckCircle2 className="w-4 h-4 text-white" />
@@ -520,50 +476,288 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── 6. Company Highlights ── */}
-      <section className="py-16 lg:py-20 bg-white">
+      {/* ── 7. Technology & Innovation ── */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* Image — left on this section */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-950 aspect-[4/3] shadow-2xl group">
+                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(45deg,rgba(255,255,255,0.05) 25%,transparent 25%,transparent 75%,rgba(255,255,255,0.05) 75%),linear-gradient(45deg,rgba(255,255,255,0.05) 25%,transparent 25%,transparent 75%,rgba(255,255,255,0.05) 75%)", backgroundSize: "30px 30px", backgroundPosition: "0 0,15px 15px" }} />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white/15">
+                  <Cpu className="w-32 h-32 mb-3" />
+                  <p className="text-sm tracking-wider">Advanced Recycling Technology</p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4">
+                    <p className="text-white font-semibold text-sm">⚙️ Modern Processing Equipment</p>
+                    <p className="text-gray-300 text-xs mt-0.5">Maximising material recovery at every stage</p>
+                  </div>
+                </div>
+              </div>
+              <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-5 -right-5 bg-white shadow-2xl rounded-2xl p-4 border border-gray-100 z-10">
+                <div className="text-2xl font-bold text-purple-600">95%</div>
+                <div className="text-xs text-gray-500 font-medium">Material Recovery</div>
+              </motion.div>
+            </motion.div>
+
+            {/* Text — right */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+            >
+              <span className="inline-flex items-center gap-1.5 bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full mb-5">
+                <span className="w-1.5 h-1.5 bg-purple-500 rounded-full" />
+                Technology & Innovation
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-5">
+                Modern Technology for{" "}
+                <span className="text-purple-600">Maximum Impact</span>
+              </h2>
+              <p className="text-gray-500 text-lg leading-relaxed mb-8">
+                We leverage modern recycling technologies and processes to ensure every device we handle contributes the maximum possible environmental and material recovery benefit.
+              </p>
+              <div className="space-y-4">
+                {techFeatures.map((f, i) => (
+                  <motion.div
+                    key={f.label}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    className="flex items-start gap-4 p-4 rounded-xl border border-gray-100 hover:border-purple-200 hover:shadow-md transition-all group bg-white"
+                  >
+                    <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform">
+                      <f.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-gray-900 text-sm mb-0.5">{f.label}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8. Our Process (horizontal) ── */}
+      <section className="py-16 lg:py-24 subtle-green-bg overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            badge="Company Highlights"
+            badge="Our Process"
+            title="How We Handle"
+            titleHighlight="Your E-Waste"
+            description="A transparent, documented, 7-step process from your doorstep to a recycling certificate."
+          />
+
+          {/* Desktop horizontal */}
+          <div className="hidden lg:block">
+            <div className="relative">
+              {/* Connector line */}
+              <div className="absolute top-10 left-[7%] right-[7%] h-0.5 bg-gradient-to-r from-green-300 via-blue-300 to-purple-300 z-0" />
+              <div className="grid grid-cols-7 gap-2">
+                {processSteps.map((step, i) => (
+                  <motion.div
+                    key={step.step}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
+                    className="relative z-10 flex flex-col items-center text-center"
+                  >
+                    <div className="w-20 h-20 bg-white border-4 border-green-100 rounded-2xl flex items-center justify-center mb-4 shadow-lg hover:border-green-400 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                      <step.icon className="w-8 h-8 text-green-600 group-hover:scale-110 transition-transform" />
+                    </div>
+                    <span className="text-xs font-bold text-green-600 mb-1">STEP {step.step}</span>
+                    <h4 className="font-bold text-gray-900 text-xs mb-1">{step.label}</h4>
+                    <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile vertical */}
+          <div className="lg:hidden space-y-3">
+            {processSteps.map((step, i) => (
+              <motion.div
+                key={step.step}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="flex items-center gap-4 bg-white rounded-2xl p-4 border border-gray-100 shadow-sm"
+              >
+                <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center shrink-0 shadow-md">
+                  <step.icon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-green-600">STEP {step.step}</span>
+                  <h4 className="font-bold text-gray-900 text-sm">{step.label}</h4>
+                  <p className="text-gray-500 text-xs">{step.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/process"
+              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3.5 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+              View Detailed Process <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. Environmental Impact ── */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            badge="Environmental Impact"
             title="Our Impact"
             titleHighlight="in Numbers"
-            description="A snapshot of the work we've done and the trust we've earned."
+            description="Real results from years of committed, responsible e-waste recycling."
           />
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {highlights.map((h, i) => (
+            {impactStats.map((s, i) => (
               <motion.div
-                key={h.label}
+                key={s.label}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`${h.light} rounded-2xl p-5 text-center border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group`}
+                className={`${s.light} rounded-2xl p-5 text-center border border-gray-100 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group`}
               >
-                <div className={`w-10 h-10 ${h.color} rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md group-hover:scale-110 transition-transform`}>
-                  <Recycle className="w-5 h-5 text-white" />
+                <div className={`w-12 h-12 ${s.color} rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md group-hover:scale-110 transition-transform`}>
+                  <s.icon className="w-6 h-6 text-white" />
                 </div>
-                <div className={`text-3xl font-bold ${h.text} leading-tight`}>
-                  <AnimatedCounter target={h.value} suffix={h.suffix} />
-                  {h.unit && <span className="text-base font-semibold ml-0.5">{h.unit}</span>}
+                <div className={`text-3xl font-bold ${s.text} leading-tight`}>
+                  <AnimatedCounter target={s.value} suffix={s.suffix} />
+                  {s.unit && <span className="text-base font-semibold ml-0.5">{s.unit}</span>}
                 </div>
-                <div className="text-gray-700 font-semibold text-xs mt-1.5">{h.label}</div>
+                <div className="text-gray-700 font-semibold text-xs mt-1.5 leading-tight">{s.label}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 7. Our Commitment ── */}
+      {/* ── 10. Our Facilities ── */}
+      <section className="py-16 lg:py-24 subtle-green-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            badge="Our Facilities"
+            title="Infrastructure Built for"
+            titleHighlight="Responsible Recycling"
+            description="A look at the facilities and infrastructure that power our certified e-waste recycling operations."
+          />
+
+          {/* Masonry-style grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+            {facilities.map((f, i) => (
+              <motion.div
+                key={f.label}
+                initial={{ opacity: 0, scale: 0.92 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className={`relative rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 ${
+                  f.size === "lg" ? "row-span-2 min-h-[320px]" : f.size === "md" ? "min-h-[200px]" : "min-h-[160px]"
+                }`}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${f.gradient}`} />
+                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.1) 1px,transparent 1px)", backgroundSize: "25px 25px" }} />
+                {/* Zoom on hover */}
+                <div className="absolute inset-0 scale-100 group-hover:scale-110 transition-transform duration-600" />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+                {/* Label */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+                  <p className="text-white font-semibold text-sm">{f.label}</p>
+                  <p className="text-white/60 text-xs">{f.category}</p>
+                </div>
+                {/* Hover zoom icon */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <ArrowRight className="w-5 h-5 text-white rotate-[-45deg]" />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/gallery"
+              className="inline-flex items-center gap-2 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-3.5 rounded-xl font-semibold transition-all">
+              View Full Gallery <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 11. Certifications & Compliance ── */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            badge="Certifications"
+            title="Certified, Authorized &"
+            titleHighlight="Fully Compliant"
+            description="Our authorizations, registrations, and certifications reflect our commitment to operating legally and responsibly."
+          />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {certifications.map((cert, i) => (
+              <motion.div
+                key={cert.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className={`${cert.light} border ${cert.border} rounded-2xl p-5 text-center hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 group`}
+              >
+                {/* Certificate placeholder */}
+                <div className={`w-14 h-14 ${cert.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform`}>
+                  <cert.icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="font-bold text-gray-900 text-sm mb-1">{cert.label}</h3>
+                <p className="text-gray-400 text-xs font-mono">{cert.number}</p>
+                <div className="mt-3 flex items-center justify-center gap-1">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
+                  <span className="text-green-600 text-xs font-semibold">Valid</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/certificates"
+              className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold text-sm transition-colors">
+              View All Certificates <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 12. Our Commitment ── */}
       <section className="py-16 lg:py-24 hero-gradient relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-green-500/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-          <div className="absolute inset-0 opacity-5"
-            style={{
-              backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-              backgroundSize: "60px 60px",
-            }} />
+          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.1) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -574,30 +768,24 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 uppercase tracking-wider">
+              <span className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-xs font-semibold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
                 <span className="w-1.5 h-1.5 bg-green-400 rounded-full" />
                 Our Commitment
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">
-                Committed to the{" "}
-                <span className="text-green-400">Planet & Our Clients</span>
+                Our Commitment Towards a{" "}
+                <span className="text-green-400">Greener Future</span>
               </h2>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
-                  At Right Ewaste Recycle Private Limited, every electronic device we receive represents an opportunity to reduce environmental impact. We are committed to ensuring that electronic waste is handled responsibly, valuable resources are recovered efficiently, and hazardous materials are disposed of in accordance with environmental standards.
+                  Every electronic device we receive represents an opportunity to reduce environmental impact. We are committed to ensuring that electronic waste is handled responsibly, valuable resources are recovered efficiently, and hazardous materials are disposed of in accordance with the strictest environmental standards.
                 </p>
                 <p>
-                  Our commitment extends beyond recycling — we aim to build awareness, encourage sustainable practices, and contribute to a cleaner and greener future for all communities across India.
+                  Our commitment extends beyond recycling — we aim to build awareness, encourage sustainable consumption habits, and contribute to a cleaner and greener future for all communities across India.
                 </p>
               </div>
-
               <div className="grid sm:grid-cols-2 gap-3 mt-8">
-                {[
-                  "Zero Landfill Policy",
-                  "Fully Government Authorized",
-                  "Transparent Reporting",
-                  "Pan-India Coverage",
-                ].map((item) => (
+                {["Zero Landfill Policy", "100% Authorized Operations", "Full Audit Trail", "Pan-India Coverage", "Free Bulk Pickup", "Same-Day Response"].map((item) => (
                   <div key={item} className="flex items-center gap-2 text-gray-300 text-sm">
                     <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
                     {item}
@@ -606,41 +794,41 @@ export default function AboutPage() {
               </div>
             </motion.div>
 
-            {/* Commitment visual */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative"
             >
               <div className="bg-white/10 border border-white/20 backdrop-blur-sm rounded-3xl p-8">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Leaf className="w-10 h-10 text-white" />
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center shadow-lg">
+                    <Leaf className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-white font-bold text-xl">Our Environmental Promise</h3>
-                  <p className="text-gray-300 text-sm mt-2">Every device recycled counts.</p>
+                  <div>
+                    <h3 className="text-white font-bold text-lg">Environmental Progress</h3>
+                    <p className="text-gray-300 text-sm">Our positive impact, by the numbers</p>
+                  </div>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {[
-                    { label: "E-Waste Safely Processed", value: "250+ Tons", bar: 75 },
-                    { label: "Devices Responsibly Recycled", value: "50,000+", bar: 85 },
-                    { label: "CO₂ Emissions Avoided", value: "125+ Tons", bar: 60 },
-                    { label: "Materials Recovered", value: "80+ Tons", bar: 70 },
+                    { label: "E-Waste Safely Processed", value: "250+ Tons", pct: 75 },
+                    { label: "Devices Responsibly Recycled", value: "50,000+", pct: 85 },
+                    { label: "CO₂ Emissions Avoided", value: "125+ Tons", pct: 60 },
+                    { label: "Materials Recovered", value: "80+ Tons", pct: 70 },
                   ].map((item) => (
                     <div key={item.label}>
                       <div className="flex justify-between text-xs mb-1">
                         <span className="text-gray-300">{item.label}</span>
                         <span className="text-green-400 font-semibold">{item.value}</span>
                       </div>
-                      <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
-                          whileInView={{ width: `${item.bar}%` }}
+                          whileInView={{ width: `${item.pct}%` }}
                           viewport={{ once: true }}
-                          transition={{ duration: 1, delay: 0.3 }}
-                          className="h-full bg-green-400 rounded-full"
+                          transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+                          className="h-full bg-gradient-to-r from-green-400 to-emerald-300 rounded-full"
                         />
                       </div>
                     </div>
@@ -652,89 +840,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── 8. Why Responsible Recycling Matters ── */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Why It Matters"
-            title="Why Responsible E-Waste"
-            titleHighlight="Recycling Matters"
-            description="Understanding the scale of the problem is the first step toward building a sustainable solution."
-          />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyMattersCards.map((card, i) => (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`${card.light} rounded-2xl p-6 border border-gray-100 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 group`}
-              >
-                <div className={`w-12 h-12 ${card.color} rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform`}>
-                  <card.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className={`font-bold ${card.text} text-base mb-3`}>{card.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{card.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 9. Timeline ── */}
-      <section className="py-16 lg:py-24 subtle-green-bg">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Our Journey"
-            title="From Startup to"
-            titleHighlight="Industry Leader"
-            description="Key milestones on our path from a small collection center to a pan-India certified recycling operation."
-          />
-
-          <div className="relative mt-12">
-            {/* Vertical line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-300 via-green-400 to-green-300 md:-translate-x-px" />
-
-            <div className="space-y-8">
-              {timeline.map((item, i) => (
-                <motion.div
-                  key={item.year}
-                  initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.08 }}
-                  className={`relative flex flex-col md:flex-row gap-4 ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
-                >
-                  {/* Dot */}
-                  <div className="absolute left-[18px] md:left-1/2 w-5 h-5 bg-green-500 border-4 border-white rounded-full shadow-md md:-translate-x-2.5 translate-y-2 z-10 flex items-center justify-center" />
-
-                  <div className={`md:w-1/2 pl-14 md:pl-0 ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:border-green-200 hover:shadow-md transition-all"
-                    >
-                      <div className={`flex items-center gap-2 mb-2 ${i % 2 === 0 ? "md:justify-end" : ""}`}>
-                        <span className="text-xl">{item.icon}</span>
-                        <span className="inline-block bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
-                          {item.year}
-                        </span>
-                      </div>
-                      <h4 className="font-bold text-gray-900 mb-1.5">{item.title}</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                    </motion.div>
-                  </div>
-
-                  <div className="md:w-1/2" />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 10. About Page CTA ── */}
+      {/* ── 13. Final CTA ── */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -744,38 +850,42 @@ export default function AboutPage() {
             transition={{ duration: 0.7 }}
             className="relative overflow-hidden hero-gradient rounded-3xl px-8 py-16 sm:px-16 text-center"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl" />
-            <div className="absolute inset-0 opacity-5"
-              style={{
-                backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-                backgroundSize: "50px 50px",
-              }} />
+            <div className="absolute top-0 right-0 w-80 h-80 bg-green-500/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
+            <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.1) 1px,transparent 1px)", backgroundSize: "50px 50px" }} />
 
             <div className="relative z-10">
-              <span className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-sm font-medium px-4 py-1.5 rounded-full mb-5">
+              <span className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 text-green-300 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                 Let's Collaborate
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
                 Let's Build a Sustainable Future Together
               </h2>
               <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-10">
-                Whether you're an individual, business, educational institution, or government organization, Right Ewaste Recycle Private Limited is here to help you recycle electronic waste responsibly and compliantly.
+                Whether you're an individual, educational institution, corporation or government organization, Right Ewaste Recycle Private Limited is ready to help you recycle electronic waste responsibly.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-8 py-4 rounded-xl font-semibold text-base shadow-lg shadow-green-500/30 hover:shadow-green-400/40 transition-all hover:-translate-y-0.5"
-                >
-                  Contact Us <ArrowRight className="w-5 h-5" />
+                <Link href="/contact"
+                  className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg shadow-green-500/30 transition-all hover:-translate-y-0.5">
+                  Contact Us <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-base backdrop-blur-sm transition-all hover:-translate-y-0.5"
-                >
-                  Explore Our Services
+                <Link href="/services"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-xl font-semibold backdrop-blur-sm transition-all hover:-translate-y-0.5">
+                  Explore Services
                 </Link>
+                <a href="tel:+919999999999"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-xl font-semibold backdrop-blur-sm transition-all hover:-translate-y-0.5">
+                  <Phone className="w-4 h-4" /> Call Now
+                </a>
+                <a href="https://wa.me/919999999999?text=Hello!%20I%27d%20like%20to%20know%20more%20about%20your%20e-waste%20recycling%20services."
+                  target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/40 text-white px-7 py-3.5 rounded-xl font-semibold transition-all hover:-translate-y-0.5">
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-[#25D366]">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  WhatsApp
+                </a>
               </div>
             </div>
           </motion.div>
